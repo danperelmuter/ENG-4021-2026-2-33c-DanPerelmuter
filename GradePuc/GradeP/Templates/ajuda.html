@@ -1,64 +1,28 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ajuda - grade.puc</title>
-    <link rel="stylesheet" href="../Static/ajuda.css">
+    <title>Document</title>
+    <link rel="stylesheet" href="Static/ajuda.css">
 </head>
 <body>
-
-    <div class="navbar"> 
-        <div class="logo">
-            <img src="../Static/logo.png" width="120px">
-        </div>
-        
-        <nav>
-          <ul>
-            <li><a href="resumo_da_grade.html">Minha grade</a></li>
-            <li><a href="grades-sugeridas.html">Grades sugeridas</a></li>
-            <li><a href="questionario.html">Questionário</a></li>
-            <li><a href="ajuda.html" class="ativo">Ajuda</a></li>
-          </ul>
-        </nav>
-        
-        <div class="perfil">
-            <div class="bolinha-perfil"></div>
-            <span>Olá, Maria</span>
-        </div>
+    <div class="header">
+        <svg style="color: white;" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-film size-5 text-primary-foreground" aria-hidden="true"><rect width="18" height="18" x="3" y="3" rx="2"></rect><path d="M7 3v18"></path><path d="M3 7.5h4"></path><path d="M3 12h18"></path><path d="M3 16.5h4"></path><path d="M17 3v18"></path><path d="M17 7.5h4"></path><path d="M17 16.5h4"></path></svg>
+        <span>Lumière</span>
     </div>
 
-    <div class="conteudo">
-        <h1 class="titulo-cor">Ajuda</h1>
-        <p class="subtitulo">Respostas rápidas para planejar sua grade com tranquilidade.</p>
-
-        <div id="caixas-perguntas">
-            
-            <div class="caixa">
-                <h3 class="titulo-cor">Como montar minha grade?</h3>
-                <p>Adicione disciplinas pelo catálogo. Conflitos de horário são bloqueados automaticamente.</p>
+    
+    <div class="catalog">
+        {% for movie in movies %}
+        <div class="card" style="width: 18rem;">
+            <img style="width: 100px;" src="{{movie.Poster}}" class="card-img-top">
+            <div>
+                <h5>{{movie.Title}}</h5>
+                <p>Some quick example text to build on the card title and make up the bulk of the card’s content.</p>
             </div>
-
-            <div class="caixa">
-                <h3 class="titulo-cor">Como usar uma sugestão?</h3>
-                <p>Abra Grades sugeridas, compare as opções e clique em Usar esta grade.</p>
-            </div>
-
-            <div class="caixa">
-                <h3 class="titulo-cor">Onde faço a matrícula?</h3>
-                <p>O grade.puc ajuda no planejamento. A matrícula oficial continua sendo feita no Portal SAU.</p>
-            </div>
-
         </div>
-
-        <button type="button" class="botao-voltar" onclick="window.location.href='resumo_da_grade.html'">Voltar para minha grade</button>
+        {% endfor %}
     </div>
-
-    <div class="rodape">
-        <img src="../Static/logo.png" width="80px">
-        <span class="texto-rodape">Planejamento hoje. Mais conquistas amanhã.</span>
-        <span class="texto-rodape">PUC-Rio</span>
-    </div>
-
 </body>
 </html>

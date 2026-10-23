@@ -20,5 +20,8 @@ from GradeP.views import *
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home)
+    path('', home2, name='home'),
+    path('filmes/novo/', movie_create, name='movie_create'),
+    path('filmes/<int:pk>/editar/', movie_update, name='movie_update'),
+    path('filmes/<int:pk>/deletar/', movie_delete, name='movie_delete'),
 ]

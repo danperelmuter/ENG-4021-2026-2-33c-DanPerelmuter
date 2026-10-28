@@ -5,5 +5,5 @@ class Movie(models.Model):
     description = models.TextField()
     image_url = models.URLField(max_length=500)
 
-    def _str_(self):
+    def __str__(self):
         return self.title
